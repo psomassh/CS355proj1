@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Event - View All </title>
+</head>
+    <body>
+        <h1> Events </h1>
+        <a href="/event/add">Add New Event</a> <br />
+
+        <table border = "1">
+            <tr>
+                <th>Customer </th>
+                <th> Caterer </th>
+                <th>Menu </th>
+                <th> Address  </th>
+                <th> Date/Time </th>
+
+            </tr>
+            <% for(var i = 0; i < result.length; i++){ %>
+                <tr>
+
+                <td><%= result[i].Cust_First_name %>
+                <%= result[i].Cust_Last_Name %></td>
+                <td><%= result[i].Caterer%></td>
+                <td><%= result[i].menu%></td>
+                <td><%= result[i].Event_Street %>,
+                <%= result[i].Event_City %>,
+                <%= result[i].Event_State %>,
+                <%= result[i].Event_Zip %></td>
+                <td><%= result[i].Event_Date_Time %></td>
+
+                </tr>
+            <% } %>
+        </table>
+
+    </body>
+</html>

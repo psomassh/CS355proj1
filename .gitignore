@@ -1,0 +1,4 @@
+node_modules
+.idea
+package-lock.json
+dal/db_connection.js

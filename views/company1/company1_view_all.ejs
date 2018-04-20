@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Company - View All </title>
+</head>
+    <body>
+        <h1> Companies </h1>
+
+        <a href="/company1/add">Add New Company</a> <br />
+
+        <table border = "1">
+            <tr>
+
+                <th> Name </th>
+                <th>Owner Name </th>
+                <th> Address </th>
+
+            </tr>
+            <% for(var i = 0; i < result.length; i++){ %>
+                <tr>
+
+                    <td><%= result[i].name %></td>
+                    <td><%= result[i].owner_fname %>
+                    <%= result[i].owner_lname %></td>
+
+                    <td><%= result[i].street %>,
+                    <%= result[i].city %>,
+                    <%= result[i].state %>,
+                    <%= result[i].zip_code %></td>
+
+                </tr>
+            <% } %>
+        </table>
+
+    </body>
+</html>

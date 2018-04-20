@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Employee - ADD </title>
+</head>
+    <body>
+        <h1> Add New Employee </h1>
+        <form action="/employee/insert" method="get">
+        SSN: <input
+                name="ssn" type="text" />
+                <br />
+        First Name: <input
+                name="fname" type="text" />
+                <br/>
+        Last Name: <input
+                 name="lname" type="text" />
+                 <br/>
+        Wage: <input
+                name="wage" type="text" />
+       <br/>
+
+
+        Address
+            <select name="address_id">
+
+             <% for(var i=0; address_result.length > i; i++ ) {
+               var selected = "";
+               %>
+
+               <option <%= selected %> value = "<%= address_result[i].address_id %>">
+               <%= address_result[i].street + ', ' + address_result[i].city + ', '
+               + address_result[i].state + ', ' + address_result[i].zip_code %>
+               </option>
+
+                <% } %>
+                <br />
+                </select>
+                <br / >
+
+
+    Company
+         <select name="comp_id">
+
+         <% for(var i=0; comp_result.length > i; i++ ) {
+                               var selected = "";%>
+
+              <option <%= selected %> value = "<%= comp_result[i].comp_id %>">
+              <%= comp_result[i].name %>
+              </option>
+
+              <% } %>
+              </select>
+              <br / >
+              <br />
+
+        <input type = "submit" />
+
+           </table>
+        </form>
+    </body>
+</html>
