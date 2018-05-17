@@ -30,3 +30,36 @@ exports.insert = function(params, callback){
         callback(err,result);
     });
 };
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE event SET date_time = ?, menu = ?, address_id = ?, cust_id = ?, comp_id = ? WHERE event_id = ?';
+    var queryData = [params.date_time, params.menu, params.address_id, params.cust_id, params.comp_id, params.event_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.getinfo = function(event_id, callback) {
+    var query = 'CALL event_getinfo(?)';
+    var queryData = [event_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+
+exports.delete = function(event_id, callback) {
+    // stored procedure to call
+    var query = 'CALL event_delete(?)';
+    var queryData = [event_id];
+
+    // call the stored procedure
+    connection.query(query, queryData,function(err, result) {
+        callback(err, event_id);
+    });
+};
+
+
+

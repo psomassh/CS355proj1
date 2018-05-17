@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee - Update </title>
+</head>
+<body>
+<h1>Update Employee </h1>
+<% if(locals.was_successful) { %>
+<div class="col-md-12">
+    <div id="message" class="alert alert-success col-md-4">
+        <%= result.fname %> was successfully saved. %>
+    </div>
+</div>
+<% } %>
+<br />
+<form action="/employee/update" method="get">
+
+    <input type="hidden"
+           id="emp_id"
+           name="emp_id"
+           value="<%= result.emp_id %>"
+    //>
+    Employee SSN: <input id="ssn"
+                        name = "ssn"
+                        type ="text"
+                        value="<%=result.ssn %>"
+    />
+    <br />
+    <br />
+
+    Employee First Name: <input id="fname"
+                         name = "fname"
+                         type ="text"
+                         value="<%=result.fname %>"
+    />
+    <br/>
+    <br />
+    Employee Last Name: <input id="lname"
+                             name = "lname"
+                             type ="text"
+                             value="<%=result.lname %>"
+    />
+    <br />
+    <br />
+
+    Address
+    <select name="address_id">
+        <% for(var i=0; address_result.length > i; i++ ) {
+
+            var selected = "";
+            if(address_result[i].address_id == result.address_id) {
+                selected = "selected";
+            }
+        %>
+        <option <%= selected %> value = "<%= address_result[i].address_id %>">
+            <%= address_result[i].street + ', ' + address_result[i].city + ', '
+            + address_result[i].state + ', '
+            + address_result[i].zip_code %></option>
+
+        <% } %>
+    </select>
+    <br />
+    <br />
+
+    Company
+    <select name="comp_id">
+        <% for(var i=0; company_result.length > i; i++ ) {
+
+            var selected = "";
+            if(company_result[i].comp_id == result.comp_id) {
+                selected = "selected";
+            }
+        %>
+        <option <%= selected %> value = "<%= company_result[i].comp_id %>">
+            <%= company_result[i].name %></option>
+
+        <% } %>
+    </select>
+    <br />
+
+    <input type="submit" />
+</form>
+</body>
+</html>

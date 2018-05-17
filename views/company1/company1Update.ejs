@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company - Update </title>
+</head>
+<body>
+<h1>Update Company </h1>
+<% if(locals.was_successful) { %>
+<div class="col-md-12">
+    <div id="message" class="alert alert-success col-md-4">
+        <%= company1.name %> was successfully saved. %>
+    </div>
+</div>
+<% } %>
+<br />
+<form action="/company1/update" method="get">
+
+    <input type="hidden"
+           id="comp_id"
+           name="comp_id"
+           value="<%= company1.comp_id %>"
+    //>
+    Company Name: <input id="name"
+                         name = "name" type ="text"
+                         value="<%=company1.name %>"
+    />
+    <br/>
+    <br />
+    Owner First Name: <input id="owner_fname"
+                             name = "owner_fname" type ="text"
+                             value="<%=company1.owner_fname %>"
+    />
+    <br />
+    <br />
+    Owner Last Name: <input id="owner_lname"
+                            name = "owner_lname" type ="text"
+                            value="<%=company1.owner_lname %>"
+    />
+    <br />
+    <br />
+    Address
+    <select name="address_id">
+        <% for(var i=0; address_result.length > i; i++ ) {
+
+            var selected = "";
+            if(address_result[i].comp_id == company1.comp_id) {
+                selected = "selected";
+            }
+        %>
+        <option <%= selected %> value = "<%= address_result[i].address_id %>">
+            <%= address_result[i].street + ', ' + address_result[i].city + ', '
+            + address_result[i].state + ', '
+            + address_result[i].zip_code %></option>
+
+        <% } %>
+    </select>
+    <br />
+
+    <input type="submit" />
+</form>
+</body>
+</html>

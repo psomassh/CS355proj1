@@ -42,4 +42,39 @@ router.get('/insert', function(req,res){
     });
 });
 
+router.get('/edit', function(req, res){
+    company1_dal.getinfo(req.query.comp_id, function(err, result) {
+        if(err) {
+            res.send(err); }
+        else {
+            res.render('company1/company1Update',
+                {company1: result[0][0], address_result: result[1], was_successful: true}
+            );
+        }
+    });
+});
+
+
+router.get('/update', function(req, res) {
+    company1_dal.update(req.query, function(err, result){
+        if(err){
+            res.send(err);
+        }
+        else{
+            res.redirect(302, '/company1/all');
+        }
+    });
+});
+
+
+router.get('/delete', function(req,res){
+    company1_dal.delete(req.query.comp_id, function(err,comp_id){
+        if(err){
+            res.send(err);
+        }
+        else{
+            res.redirect(302, '/company1/all?comp_id=' + comp_id + '&was_successful=1');
+        }
+    });
+});
 module.exports = router;

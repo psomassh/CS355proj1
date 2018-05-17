@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event- Update </title>
+</head>
+<body>
+<h1>Update Event </h1>
+
+<br />
+<form action="/event/update" method="get">
+
+    <input type="hidden"
+           id="event_id"
+           name="event_id"
+           value="<%= result.event_id %>"
+    />
+
+     Event Date/Time: <input id="date_time"
+                         name = "date_time"
+                         type ="text"
+                         value="<%=result.date_time %>"
+    />
+    <br />
+    <br />
+
+    Menu: <input id="menu"
+                 name = "menu"
+                 type ="text"
+                 value="<%=result.menu %>"
+    />
+
+    <br />
+    <br />
+
+    Address
+    <select name="address_id">
+        <% for(var i=0; address_result.length > i; i++ ) {
+
+            var selected = "";
+            if(address_result[i].address_id == result.address_id) {
+                selected = "selected";
+            }
+        %>
+        <option <%= selected %> value = "<%= address_result[i].address_id %>">
+            <%= address_result[i].street + ', ' + address_result[i].city + ', '
+            + address_result[i].state + ', '
+            + address_result[i].zip_code %></option>
+
+        <% } %>
+    </select>
+    <br />
+    <br />
+
+    Company
+    <select name="comp_id">
+        <% for(var i=0; company_result.length > i; i++ ) {
+
+            var selected = "";
+            if(company_result[i].comp_id == result.comp_id) {
+                selected = "selected";
+            }
+        %>
+        <option <%= selected %> value = "<%= company_result[i].comp_id %>">
+            <%= company_result[i].name %></option>
+
+        <% } %>
+    </select>
+    <br />
+
+    Customer
+    <select name="cust_id">
+        <% for(var i=0; customer_result.length > i; i++ ) {
+
+            var selected = "";
+            if(customer_result[i].cust_id == result.cust_id) {
+                selected = "selected";
+            }
+        %>
+        <option <%= selected %> value = "<%= customer_result[i].cust_id %>">
+            <%= customer_result[i].fname + ' ' + customer_result[i].lname %></option>
+
+        <% } %>
+    </select>
+    <br />
+
+    <input type="submit" />
+</form>
+</body>
+</html>

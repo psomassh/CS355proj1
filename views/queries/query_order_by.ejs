@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>  </title>
+</head>
+<body>
+
+<a href="/queries/thing"> </a> <br />
+
+<table border = "1">
+    <tr>
+
+        <th> COLUMN </th>
+
+
+    </tr>
+    <% for(var i = 0; i < result.length; i++){ %>
+    <tr>
+
+        <td><%= result[i].ssn %></td>
+
+        <td><%= result[i].wage %></td>
+        <td><%= result[i].street %>,
+            <%= result[i].city %>,
+            <%= result[i].state %>,
+            <%= result[i].zip_code %></td>
+        <td><%= result[i].company_name %></td>
+
+    </tr>
+    <% } %>
+</table>
+
+</body>
+<head/>
+</html>

@@ -53,3 +53,33 @@ exports.insert = function(params, callback){
         callback(err,result);
     });
 };
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE employee SET ssn = ?, fname = ?, lname = ?, address_id = ?, comp_id = ? WHERE emp_id = ?';
+    var queryData = [params.ssn, params.name, params.lname, params.address_id, params.comp_id, params.emp_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.getinfo = function(emp_id, callback) {
+    var query = 'CALL employee_getinfo(?)';
+    var queryData = [emp_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+
+exports.delete = function(emp_id, callback) {
+    // stored procedure to call
+    var query = 'CALL employee_delete(?)';
+    var queryData = [emp_id];
+
+    // call the stored procedure
+    connection.query(query, queryData,function(err, result) {
+        callback(err, emp_id);
+    });
+};

@@ -6,6 +6,13 @@
 </head>
     <body>
         <h1> Employees </h1>
+        <% if(locals.was_successful) { %>
+        <div>
+            <div id="message">
+                was successfully Deleted.
+            </div>
+        </div>
+        <% } %>
         <a href="/employee/add">Add New Employee</a> <br />
 
         <table border = "1">
@@ -16,6 +23,7 @@
                 <th> Wage </th>
                 <th>Address</th>
                 <th> Company </th>
+                <th> Actions </th>
 
             </tr>
             <% for(var i = 0; i < result.length; i++){ %>
@@ -29,6 +37,14 @@
                     <%= result[i].state %>,
                     <%= result[i].zip_code %></td>
                     <td><%= result[i].company_name %></td>
+                    <td><a href="/employee/edit/?emp_id=<%= result[i].emp_id %>">
+                            Edit
+                        </a>
+                        <a href='/employee/delete/?emp_id=<%= result[i].emp_id %>'>
+                            Delete
+                        </a>
+
+                    </td>
                 </tr>
             <% } %>
         </table>

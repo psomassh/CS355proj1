@@ -7,6 +7,14 @@
     <body>
         <h1> Companies </h1>
 
+        <% if(locals.was_successful) { %>
+        <div>
+            <div id="message">
+                was successfully Deleted.
+            </div>
+        </div>
+        <% } %>
+
         <a href="/company1/add">Add New Company</a> <br />
 
         <table border = "1">
@@ -15,6 +23,7 @@
                 <th> Name </th>
                 <th>Owner Name </th>
                 <th> Address </th>
+                <th>Actions</th>
 
             </tr>
             <% for(var i = 0; i < result.length; i++){ %>
@@ -28,6 +37,15 @@
                     <%= result[i].city %>,
                     <%= result[i].state %>,
                     <%= result[i].zip_code %></td>
+                    <td>
+                        <a href='/company1/edit/?comp_id=<%= result[i].comp_id %>'>
+                            Edit
+                        </a>
+
+                        <a href='/company1/delete/?comp_id=<%= result[i].comp_id %>'>
+                            Delete
+                        </a>
+                    </td>
 
                 </tr>
             <% } %>

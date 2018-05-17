@@ -12,6 +12,7 @@ var company1 = require('./routes/company1');
 var event = require('./routes/event');
 var employee = require('./routes/employee');
 var customer = require('./routes/customer');
+var queries = require('./routes/queries');
 var temp = require('./routes/');
 
 var app = express();
@@ -35,6 +36,7 @@ app.use('/company1', company1);
 app.use('/employee',employee);
 app.use('/event', event);
 app.use('/customer',customer);
+app.use('/queries', queries); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

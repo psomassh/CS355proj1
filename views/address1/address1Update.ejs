@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Address Update </title>
+</head>
+<body>
+<h1>Update Address </h1>
+<% if(locals.was_successful) { %>
+<div class="col-md-12">
+    <div id="message" class="alert alert-success col-md-4">
+        <%= address.address_id %> was successfully saved. %>
+    </div>
+</div>
+<% } %>
+<form action="/address1/update" method="get">
+
+    <input type="hidden"
+           id="address_id"
+           name="address_id"
+           type = "text"
+           value="<%= address.address_id %>">
+    Street: <input
+            id = "street"
+            name = "street"
+            type ="text"
+            value="<%= address.street %>" />
+
+    City: <input
+            id = "city"
+            name = "city"
+            type ="text"
+            value="<%= address.city %>" />
+
+    State: <input
+            id = "state"
+            name = "state"
+            type ="text"
+            value="<%= address.state %>" />
+
+    Zip Code: <input
+            id="zip_code"
+            name = "zip_code"
+            type ="text"
+            value="<%= address.zip_code %>"/>
+
+    <br/>
+    <input type="submit" />
+</form>
+</body>
+

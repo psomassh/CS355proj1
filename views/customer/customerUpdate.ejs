@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer - Update </title>
+</head>
+<body>
+<h1>Update Customer </h1>
+<% if(locals.was_successful) { %>
+<div class="col-md-12">
+    <div id="message" class="alert alert-success col-md-4">
+        <%= customer.fname %> was successfully saved. %>
+    </div>
+</div>
+<% } %>
+<br />
+<form action="/customer/update" method="get">
+
+    <input type="hidden"
+           id="cust_id"
+           name="cust_id"
+           value="<%= customer.cust_id %>"
+    //>
+
+    <br />
+    First Name: <input id="fname"
+                       name = "fname" type ="text"
+                       value="<%=customer.fname %>"
+    />
+    <br />
+    <br />
+    Last Name: <input id="lname"
+                      name = "lname" type ="text"
+                      value="<%=customer.lname %>"
+    />
+    <br />
+    <br />
+    Address
+    <select name="address_id">
+        <% for(var i=0; address_result.length > i; i++ ) {
+
+            var selected = "";
+            if(address_result[i].cust_id == customer.cust_id) {
+                selected = "selected";
+            }
+        %>
+        <option <%= selected %> value = "<%= address_result[i].address_id %>">
+            <%= address_result[i].street + ', ' + address_result[i].city + ', '
+            + address_result[i].state + ', '
+            + address_result[i].zip_code %></option>
+
+        <% } %>
+    </select>
+    <br />
+
+    <input type="submit" />
+</form>
+</body>
+</html>

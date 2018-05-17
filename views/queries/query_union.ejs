@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>  </title>
+</head>
+<body>
+
+<a href="/queries/in"> </a> <br />
+<h1> Queries - IN </h1>
+<h4> This query returns a list all of the customers for Gerards Paella (comp_id = 1) </h4>
+
+<table border = "1">
+    <tr>
+        <th> Company Name </th>
+    </tr>
+    <% for(var i = 0; i < result.length; i++){ %>
+    <tr>
+
+        <td><%= result[i].name %></td>
+
+    </tr>
+    <% } %>
+</table>
+
+</body>
+<head/>
+
+</html>

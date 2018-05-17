@@ -29,3 +29,34 @@ exports.insert = function(params, callback){
         callback(err,result);
     });
 };
+
+exports.getinfo = function(address_id, callback) {
+    var query = 'CALL address1_getinfo(?)';
+    var queryData = [address_id];
+
+    connection.query(query, queryData, function (err, result) {
+        callback(err, result);
+    });
+
+};
+
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE address1 SET street = ?, city = ?, state = ?, zip_code = ? WHERE address_id = ?';
+    var queryData = [params.street, params.city, params.state, params.zip_code,params.address_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.delete = function(address_id, callback) {
+    // stored procedure to call
+    var query = 'CALL address1_delete(?)';
+    var queryData = [address_id];
+
+    // call the stored procedure
+    connection.query(query, queryData,function(err, result) {
+        callback(err, address_id);
+    });
+};
