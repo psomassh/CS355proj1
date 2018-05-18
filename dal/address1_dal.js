@@ -12,6 +12,7 @@ exports.viewAll = function(callback){
     });
 };
 
+
 exports.getAll = function(callback){
     var query = 'CALL address1_getall()';
 
@@ -29,6 +30,7 @@ exports.insert = function(params, callback){
         callback(err,result);
     });
 };
+
 
 exports.getinfo = function(address_id, callback) {
     var query = 'CALL address1_getinfo(?)';
@@ -49,6 +51,7 @@ exports.update = function(params, callback) {
         callback(err, result);
     });
 };
+
 
 exports.delete = function(address_id, callback) {
     // stored procedure to call

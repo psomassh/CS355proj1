@@ -40,6 +40,7 @@ exports.update = function(params, callback) {
     });
 };
 
+
 exports.getinfo = function(event_id, callback) {
     var query = 'CALL event_getinfo(?)';
     var queryData = [event_id];

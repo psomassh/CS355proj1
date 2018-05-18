@@ -6,27 +6,20 @@
 </head>
 <body>
 
-<a href="/queries/thing"> </a> <br />
+<h1> Queries - Order By </h1>
+<h4> This query returns a list of all the customers ordered by last name, first name. </h4>
+
+<a href="/queries/order_by"> </a>
 
 <table border = "1">
     <tr>
-
-        <th> COLUMN </th>
-
-
+        <th> Fist Name </th>
+        <th> Last Name </th>
     </tr>
     <% for(var i = 0; i < result.length; i++){ %>
     <tr>
-
-        <td><%= result[i].ssn %></td>
-
-        <td><%= result[i].wage %></td>
-        <td><%= result[i].street %>,
-            <%= result[i].city %>,
-            <%= result[i].state %>,
-            <%= result[i].zip_code %></td>
-        <td><%= result[i].company_name %></td>
-
+        <td><%= result[i].fname %></td>
+        <td><%= result[i].lname %></td>
     </tr>
     <% } %>
 </table>

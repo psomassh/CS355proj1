@@ -6,23 +6,22 @@
 </head>
 <body>
 
-<a href="/queries/thing"> </a> <br />
+<h1> Queries - Compare </h1>
+<h4> This query returns first name, last name, and wage of the employee with the highest wage. </h4>
+
+<a href="/queries/compare"> </a>
 
 <table border = "1">
     <tr>
-
-        <th> COLUMN </th>
-
-
+        <th> First Name </th>
+        <th> Last Name </th>
+        <th> Wage </th>
     </tr>
     <% for(var i = 0; i < result.length; i++){ %>
     <tr>
-
         <td><%= result[i].fname %></td>
         <td><%= result[i].lname %></td>
         <td><%= result[i].wage %></td>
-
-
     </tr>
     <% } %>
 </table>

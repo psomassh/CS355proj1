@@ -3,7 +3,6 @@ var router = express.Router();
 var address1_dal = require('../dal/address1_dal');
 
 
-/*Get users listening. */
 router.get('/all', function(req, res,next){
     address1_dal.viewAll(function(err,result){
         if(err){
@@ -27,6 +26,7 @@ router.get('/add', function(req,res){
         }
     });
 });
+
 
 router.get('/insert', function(req,res){
    address1_dal.insert(req.query, function(err,result){
@@ -54,6 +54,7 @@ router.get('/edit', function(req, res){
     });
 });
 
+
 router.get('/update', function(req, res) {
     address1_dal.update(req.query, function(err, result){
         if(err) {
@@ -77,5 +78,6 @@ router.get('/delete', function(req,res){
         }
     });
 });
+
 
 module.exports = router;

@@ -18,28 +18,25 @@
     <input type="hidden"
            id="emp_id"
            name="emp_id"
-           value="<%= result.emp_id %>"
-    //>
+           value="<%= result.emp_id %>"/>
+
     Employee SSN: <input id="ssn"
                         name = "ssn"
                         type ="text"
-                        value="<%=result.ssn %>"
-    />
+                        value="<%=result.ssn %>"/>
     <br />
     <br />
 
     Employee First Name: <input id="fname"
                          name = "fname"
                          type ="text"
-                         value="<%=result.fname %>"
-    />
+                         value="<%=result.fname %>"/>
     <br/>
     <br />
     Employee Last Name: <input id="lname"
                              name = "lname"
                              type ="text"
-                             value="<%=result.lname %>"
-    />
+                             value="<%=result.lname %>"/>
     <br />
     <br />
 
@@ -52,10 +49,12 @@
                 selected = "selected";
             }
         %>
-        <option <%= selected %> value = "<%= address_result[i].address_id %>">
-            <%= address_result[i].street + ', ' + address_result[i].city + ', '
-            + address_result[i].state + ', '
-            + address_result[i].zip_code %></option>
+        <option <%= selected %>
+                value = "<%= address_result[i].address_id %>">
+                <%= address_result[i].street + ', ' +
+                 address_result[i].city + ', ' +
+                address_result[i].state + ', ' +
+                address_result[i].zip_code %> </option>
 
         <% } %>
     </select>
@@ -71,8 +70,9 @@
                 selected = "selected";
             }
         %>
-        <option <%= selected %> value = "<%= company_result[i].comp_id %>">
-            <%= company_result[i].name %></option>
+        <option <%= selected %>
+                value = "<%= company_result[i].comp_id %>">
+                <%= company_result[i].name %> </option>
 
         <% } %>
     </select>

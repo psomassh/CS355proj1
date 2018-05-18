@@ -11,8 +11,7 @@
         Last Name: <input name="lname" type="text" />
 
         <br />
-
-             <br / >
+        <br />
 
              Address
                 <select name="address_id">
@@ -20,14 +19,18 @@
                  <% for(var i=0; address_result.length > i; i++ ) {
                             var selected = "";%>
 
-                 <option <%= selected %> value = "<%= address_result[i].address_id %>">
-                 <%= address_result[i].street + ', ' + address_result[i].city + ', ' + address_result[i].state + ', ' + address_result[i].zip_code %>
+                 <option <%= selected %>
+                         value = "<%= address_result[i].address_id %>">
+                        <%= address_result[i].street + ', ' +
+                        address_result[i].city + ', ' +
+                        address_result[i].state + ', ' +
+                        address_result[i].zip_code %>
                  </option>
 
                  <% } %>
                  <br />
                  </select>
-                 <br / >
+                 <br />
 
                 <input type = "submit" />
 

@@ -3,7 +3,6 @@ var router = express.Router();
 var employee_dal = require('../dal/employee_dal');
 
 
-/*Get users listening. */
 router.get('/all', function(req, res,next){
     employee_dal.viewAll(function(err,result){
         if(err){
@@ -28,6 +27,7 @@ router.get('/add', function(req, res){
         }
     });
 });
+
 
 router.get('/insert', function(req,res){
     employee_dal.insert(req.query, function(err,result){
@@ -77,5 +77,6 @@ router.get('/delete', function(req,res){
         }
     });
 });
+
 
 module.exports = router;

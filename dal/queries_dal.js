@@ -3,7 +3,6 @@ var db = require('./db_connection.js');
 
 
 var connection = mysql.createConnection(db.config);
-
 exports.correlated = function(callback){
     var query = 'CALL correlated()';
 
@@ -11,6 +10,7 @@ exports.correlated = function(callback){
         callback(err,result);
     });
 };
+
 
 exports.join = function(callback){
     var query = 'CALL _join()';
@@ -20,6 +20,7 @@ exports.join = function(callback){
     });
 };
 
+
 exports.in = function(callback){
     var query = 'CALL _in()';
 
@@ -27,6 +28,7 @@ exports.in = function(callback){
         callback(err,result);
     });
 };
+
 
 exports.exists = function(callback){
     var query = 'CALL _exists()';
@@ -36,6 +38,7 @@ exports.exists = function(callback){
     });
 };
 
+
 exports.compare = function(callback){
     var query = 'CALL compare()';
 
@@ -43,6 +46,7 @@ exports.compare = function(callback){
         callback(err,result);
     });
 };
+
 
 exports.group_by = function(callback){
     var query = 'CALL group_by()';
@@ -52,6 +56,7 @@ exports.group_by = function(callback){
     });
 };
 
+
 exports.join_group_having = function(callback){
     var query = 'CALL join_group_having()';
 
@@ -59,6 +64,7 @@ exports.join_group_having = function(callback){
         callback(err,result);
     });
 };
+
 
 exports.order_by = function(callback){
     var query = 'CALL _order_by()';
@@ -68,6 +74,7 @@ exports.order_by = function(callback){
     });
 };
 
+
 exports.union = function(callback){
     var query = 'CALL _union()';
 
@@ -75,7 +82,6 @@ exports.union = function(callback){
         callback(err,result);
     });
 };
-
 
 
 exports.distinct= function(callback){

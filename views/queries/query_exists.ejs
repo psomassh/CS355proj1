@@ -6,19 +6,22 @@
 </head>
 <body>
 
-<a href="/queries/in"> </a> <br />
-<h1> Queries - IN </h1>
-<h4> This query returns a list all of the customers for Gerards Paella (comp_id = 1) </h4>
+<h1> Queries - Exists </h1>
+<h4> This query returns all of the employees working event 1. </h4>
+
+<a href="/queries/exists"> </a>
 
 <table border = "1">
     <tr>
-        <th> Company Name </th>
+        <th> First Name </th>
+        <th> Last Name </th>
+        <th>  Wage </th>
     </tr>
     <% for(var i = 0; i < result.length; i++){ %>
     <tr>
-
-        <td><%= result[i].name %></td>
-
+        <td><%= result[i].fname %></td>
+        <td><%= result[i].lname %></td>
+        <td><%= result[i].wage %></td>
     </tr>
     <% } %>
 </table>

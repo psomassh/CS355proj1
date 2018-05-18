@@ -6,9 +6,10 @@
 </head>
 <body>
 
-<a href="/queries/in"> </a> <br />
-<h1> Queries - IN </h1>
-<h4> This query returns a list all of the customers for Gerards Paella (comp_id = 1) </h4>
+<h1> Queries - Group By </h1>
+<h4> This query returns number of events each of the companies have worked.</h4>
+
+<a href="/queries/group_by"> </a>
 
 <table border = "1">
     <tr>
@@ -17,10 +18,8 @@
     </tr>
     <% for(var i = 0; i < result.length; i++){ %>
     <tr>
-
         <td><%= result[i].name %></td>
         <td><%= result[i].events_worked %></td>
-
     </tr>
     <% } %>
 </table>

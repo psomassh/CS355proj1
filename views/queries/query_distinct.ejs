@@ -6,22 +6,20 @@
 </head>
 <body>
 
-<a href="/queries/distinct"> </a> <br />
 <h1> Queries - Distinct </h1>
 <h4> This query returns the number of different menus served at events per company. </h4>
+
+<a href="/queries/distinct"> </a>
 
 <table border = "1">
     <tr>
         <th> Company Name  </th>
         <th> Number Menu(s) Served </th>
-
     </tr>
     <% for(var i = 0; i < result.length; i++){ %>
     <tr>
-
         <td><%= result[i].name %></td>
         <td><%= result[i].menus_served %></td>
-
     </tr>
     <% } %>
 </table>

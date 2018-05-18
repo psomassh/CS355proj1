@@ -18,20 +18,17 @@
     <input type="hidden"
            id="cust_id"
            name="cust_id"
-           value="<%= customer.cust_id %>"
-    //>
+           value="<%= customer.cust_id %>"/>
 
     <br />
     First Name: <input id="fname"
                        name = "fname" type ="text"
-                       value="<%=customer.fname %>"
-    />
+                       value="<%=customer.fname %>"/>
     <br />
     <br />
     Last Name: <input id="lname"
                       name = "lname" type ="text"
-                      value="<%=customer.lname %>"
-    />
+                      value="<%=customer.lname %>"/>
     <br />
     <br />
     Address
@@ -43,10 +40,12 @@
                 selected = "selected";
             }
         %>
-        <option <%= selected %> value = "<%= address_result[i].address_id %>">
-            <%= address_result[i].street + ', ' + address_result[i].city + ', '
-            + address_result[i].state + ', '
-            + address_result[i].zip_code %></option>
+        <option <%= selected %>
+                value = "<%= address_result[i].address_id %>">
+                <%= address_result[i].street + ', ' +
+                 address_result[i].city + ', ' +
+                address_result[i].state + ', ' +
+                address_result[i].zip_code %></option>
 
         <% } %>
     </select>

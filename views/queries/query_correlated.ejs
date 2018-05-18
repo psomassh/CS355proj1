@@ -6,22 +6,20 @@
 </head>
 <body>
 
-<a href="/queries/correlated"> </a> <br />
-
 <h1> Queries - Correlated </h1>
 <h4> This query returns all of the customers who have not had an event catered. </h4>
+
+<a href="/queries/correlated"> </a>
+
 <table border = "1">
     <tr>
         <th> First Name </th>
         <th> Last Name </th>
-
     </tr>
     <% for(var i = 0; i < result.length; i++){ %>
     <tr>
-
         <td><%= result[i].fname %></td>
         <td><%= result[i].lname %></td>
-
     </tr>
     <% } %>
 </table>

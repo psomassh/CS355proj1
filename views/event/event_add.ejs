@@ -6,43 +6,56 @@
 </head>
     <body>
         <h1> Add New event </h1>
+
         <form action="/event/insert" method="get">
-        Date/Time: <input name="date_time" type="text" />
+
+            Date/Time: <input
+                    name="date_time"
+                    type="text" />
         <br />
         <br />
-        Menu: <input name="menu" type="text" />
+        Menu:
+            <input name="menu"
+                   type="text" />
         <br />
 
         Address
-        <select name="address_id">
+            <select name="address_id">
 
          <% for(var i=0; address_result.length > i; i++ ) {
                        var selected = "";
                        %>
 
-          <option <%= selected %> value = "<%= address_result[i].address_id %>">
-          <%= address_result[i].street + ', ' + address_result[i].city + ', ' + address_result[i].state + ', ' + address_result[i].zip_code %>
+          <option <%= selected %>
+                  value = "<%= address_result[i].address_id %>">
+              <%= address_result[i].street + ', ' +
+                    address_result[i].city + ', ' +
+                    address_result[i].state + ', ' +
+                    address_result[i].zip_code %>
           </option>
-
           <% } %>
+
           </select>
-        <br / >
+
+        <br />
         <br />
 
         Company
           <select name="comp_id">
 
               <% for(var i=0; comp_result.length > i; i++ ) {
-                           var selected = ""; %>
+                  var selected = ""; %>
 
-               <option <%= selected %> value = "<%= comp_result[i].comp_id %>">
-               <%= comp_result[i].name %>
+               <option <%= selected %>
+                       value = "<%= comp_result[i].comp_id %>">
+                                 <%= comp_result[i].name %>
                </option>
-
                <% } %>
+
                </select>
-               <br / >
-               <br />
+
+            <br />
+            <br />
 
         Customer
           <select name="cust_id">
@@ -50,13 +63,17 @@
              <% for(var i=0; cust_result.length > i; i++ ) {
                        var selected = "";%>
 
-             <option <%= selected %> value = "<%= cust_result[i].cust_id %>">
-             <%= cust_result[i].fname + ', ' + cust_result[i].lname %>
+             <option <%= selected %>
+                     value = "<%= cust_result[i].cust_id %>">
+                     <%= cust_result[i].fname + ', '
+                     + cust_result[i].lname %>
               </option>
 
               <% } %>
               <br />
+
               </select>
+
               <br />
 
         <input type = "submit" />

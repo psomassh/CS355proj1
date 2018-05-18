@@ -3,7 +3,6 @@ var router = express.Router();
 var event_dal = require('../dal/event_dal');
 
 
-/*Get users listening. */
 router.get('/all', function(req, res,next){
     event_dal.viewAll(function(err,result){
         if(err){
@@ -34,6 +33,7 @@ router.get('/add', function(req, res){
     });
 });
 
+
 router.get('/insert', function(req,res){
     event_dal.insert(req.query, function(err,result){
         if(err){
@@ -45,6 +45,7 @@ router.get('/insert', function(req,res){
         }
     });
 });
+
 
 router.get('/edit', function(req, res){
     event_dal.getinfo(req.query.event_id, function(err, result) {
@@ -86,5 +87,6 @@ router.get('/delete', function(req,res){
         }
     });
 });
+
 
 module.exports = router;

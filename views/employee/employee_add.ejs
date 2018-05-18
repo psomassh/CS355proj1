@@ -20,7 +20,6 @@
                 name="wage" type="text" />
        <br/>
 
-
         Address
             <select name="address_id">
 
@@ -28,16 +27,18 @@
                var selected = "";
                %>
 
-               <option <%= selected %> value = "<%= address_result[i].address_id %>">
-               <%= address_result[i].street + ', ' + address_result[i].city + ', '
-               + address_result[i].state + ', ' + address_result[i].zip_code %>
+               <option <%= selected %>
+                       value = "<%= address_result[i].address_id %>">
+                        <%= address_result[i].street + ', ' +
+                        address_result[i].city + ', ' +
+                        address_result[i].state + ', ' +
+                        address_result[i].zip_code %>
                </option>
 
                 <% } %>
                 <br />
                 </select>
-                <br / >
-
+                <br />
 
     Company
          <select name="comp_id">
@@ -45,13 +46,14 @@
          <% for(var i=0; comp_result.length > i; i++ ) {
                                var selected = "";%>
 
-              <option <%= selected %> value = "<%= comp_result[i].comp_id %>">
-              <%= comp_result[i].name %>
+              <option <%= selected %>
+                      value = "<%= comp_result[i].comp_id %>">
+                        <%= comp_result[i].name %>
               </option>
 
               <% } %>
               </select>
-              <br / >
+              <br />
               <br />
 
         <input type = "submit" />

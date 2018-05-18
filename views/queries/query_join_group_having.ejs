@@ -2,13 +2,14 @@
 <html>
 
 <head>
-    <title>  </title>
+    <title> Queries - Join, Group By, Having  </title>
 </head>
 <body>
 
-<a href="/queries/in"> </a> <br />
-<h1> Queries - IN </h1>
-<h4> This query returns a list all of the customers for Gerards Paella (comp_id = 1) </h4>
+<h1> Queries - Join, Group By, Having </h1>
+<h4> This query returns the name of the customer who has had the most events catered. </h4>
+
+<a href="/queries/join_group_having"> </a>
 
 <table border = "1">
     <tr>
@@ -17,10 +18,8 @@
     </tr>
     <% for(var i = 0; i < result.length; i++){ %>
     <tr>
-
         <td><%= result[i].fname %></td>
         <td><%= result[i].lname %></td>
-
     </tr>
     <% } %>
 </table>

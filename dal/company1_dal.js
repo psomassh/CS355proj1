@@ -21,6 +21,7 @@ exports.getAll = function(callback){
     });
 };
 
+
 exports.insert = function(params, callback){
     var query = 'INSERT INTO company1 (name, owner_fname, owner_lname, address_id) VALUES (?,?,?,?)';
     var queryData = [params.name, params.owner_fname, params.owner_lname,params.address_id];
@@ -40,6 +41,7 @@ exports.update = function(params, callback) {
         });
 };
 
+
 exports.getinfo = function(comp_id, callback) {
     var query = 'CALL company1_getinfo(?)';
     var queryData = [comp_id];
@@ -48,6 +50,7 @@ exports.getinfo = function(comp_id, callback) {
         callback(err, result);
     });
 };
+
 
 exports.delete = function(comp_id, callback) {
     // stored procedure to call

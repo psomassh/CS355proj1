@@ -6,9 +6,10 @@
 </head>
 <body>
 
-<a href="/queries/in"> </a> <br />
 <h1> Queries - IN </h1>
-<h4> This query returns a list all of the customers for Gerards Paella (comp_id = 1) </h4>
+<h4> This query returns a list of all of the companies who are located in the State of NY. </h4>
+
+<a href="/queries/in"> </a>
 
 <table border = "1">
     <tr>
@@ -16,9 +17,7 @@
     </tr>
     <% for(var i = 0; i < result.length; i++){ %>
     <tr>
-
         <td><%= result[i].name %></td>
-
     </tr>
     <% } %>
 </table>
